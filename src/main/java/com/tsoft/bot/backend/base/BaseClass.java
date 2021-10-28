@@ -4,7 +4,7 @@ import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.tsoft.bot.backend.objects.ServiceObjects;
 import com.tsoft.bot.both.utility.FileHelper;
-import com.tsoft.bot.both.utils.JsonUtils;
+import com.tsoft.bot.both.utility.JsonUtils;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.core.Serenity;
@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static net.serenitybdd.rest.SerenityRest.expect;
 import static org.junit.Assert.*;
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.loader.SchemaLoader;

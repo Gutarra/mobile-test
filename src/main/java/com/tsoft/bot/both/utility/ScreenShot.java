@@ -1,4 +1,4 @@
-package com.tsoft.bot.frontend.base;
+package com.tsoft.bot.both.utility;
 
 import gherkin.lexer.Pa;
 import org.apache.commons.io.FileUtils;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class ScreenShotClass
+public class ScreenShot
 {
     public static void capture(WebDriver webDriver, String namescreenshoot)
     {

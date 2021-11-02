@@ -13,4 +13,4 @@ Característica: Probar USSD - MOBILE
 
 		Ejemplos:
 		| Excel 	| Dato 	|
-		|USSD.xlsx	|2    	|
+		|USSD.xlsx	| 1   	|

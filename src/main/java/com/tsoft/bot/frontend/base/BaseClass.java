@@ -1,5 +1,6 @@
 package com.tsoft.bot.frontend.base;
 
+import com.tsoft.bot.both.utility.ScreenShot;
 import com.tsoft.bot.frontend.exceptions.FrontEndException;
 import com.tsoft.bot.both.utility.ExtentReportUtil;
 import com.tsoft.bot.both.utility.GenerateWord;
@@ -145,7 +146,7 @@ public class BaseClass {
     {
         try
         {
-            Serenity.recordReportData().withTitle(title).downloadable().fromFile(ScreenShotClass.takeScreenShoot(driver));
+            Serenity.recordReportData().withTitle(title).downloadable().fromFile(ScreenShot.takeScreenShoot(driver));
         }
         catch (Exception e)
         {

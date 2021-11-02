@@ -38,7 +38,7 @@ public class Hook extends Listener {
 
 	@Before
 	public void scenario(Scenario scenario){
-		if (!scenario.getName().contains("API") && !scenario.getName().contains("servicios"))
+		if (!scenario.getName().contains("API") && !scenario.getName().contains("servicios") && !scenario.getName().contains("MOBILE"))
 		{
 			onTestStart(scenario.getName());
 		}
@@ -46,7 +46,7 @@ public class Hook extends Listener {
 
 	@Before
 	public static void setUpWeb(Scenario scenario) throws IOException {
-		if (!scenario.getName().contains("API") && !scenario.getName().contains("servicios"))
+		if (!scenario.getName().contains("API") && !scenario.getName().contains("servicios") && !scenario.getName().contains("MOBILE"))
 		{
 			generateWord = new GenerateWord();
 			generateWord.startUpWord(scenario.getName());
@@ -109,7 +109,7 @@ public class Hook extends Listener {
 
 	@After
 	public void tearDown(Scenario scenario) throws IOException {
-		if (!scenario.getName().contains("API") && !scenario.getName().contains("servicios"))
+		if (!scenario.getName().contains("API") && !scenario.getName().contains("servicios") && !scenario.getName().contains("MOBILE"))
 		{
 			onFinish();
 			driver.quit();

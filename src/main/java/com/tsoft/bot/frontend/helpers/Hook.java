@@ -112,7 +112,7 @@ public class Hook extends Listener {
 		if (!scenario.getName().contains("API") && !scenario.getName().contains("servicios"))
 		{
 			onFinish();
-
+			driver.quit();
 			generateWord.endToWord(scenario.getStatus().toString());
 		}
 	}

@@ -7,11 +7,9 @@ import org.testng.annotations.Test;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber"},
-        tags = "@API or @buy-product",
+        tags = "@web-duo or @web-trio",
         features = {
-                "src/test/resources/features/buyproducts",
-                "src/test/resources/features/service",
-                "src/main/resources/features",
+                "src/test/resources/features/telefonica",
         },
         glue={
                 "steps",

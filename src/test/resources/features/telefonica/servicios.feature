@@ -1,5 +1,5 @@
 # language: es
-Característica: Probar APIs
+Característica: Prueba APIs
 	@API
   	Esquema del escenario: Prueba API
 		Dado que se proporciona un archivo "<Excel>" con el "<Dato>" para la prueba
@@ -16,6 +16,5 @@ Característica: Probar APIs
 		Y capturamos datos mediante un jsonpath
 
 		Ejemplos:
-	  		|     Excel          |    Dato       |
-	  		# | ProyectoAPI.xlsm   | 2             |
-	  		# | ProyectoAPI.xlsm   | 3             |
+	  		|     Excel          				|    Dato       |
+	  		#| Telefonica.Prueba.Servicios.xlsm  | 1             |

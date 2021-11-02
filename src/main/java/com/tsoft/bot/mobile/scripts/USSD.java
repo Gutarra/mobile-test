@@ -10,11 +10,12 @@ import org.openqa.selenium.By;
 import java.io.IOException;
 
 public class USSD extends MobileBaseClass {
-    private static AppiumDriver<MobileElement> driver = HookMobile.getDriver();
+    private static AppiumDriver<MobileElement> driver;
     private String message = "inicio";
 
     public void goToKeyboard() throws IOException {
         try {
+            driver = HookMobile.getDriver();
             if (isDisplayed(driver,MobileObjects.one)){
                 click(driver,MobileObjects.keyboard);
                 message = "ingresando a la marcación";

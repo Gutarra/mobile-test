@@ -1,4 +1,4 @@
-package com.tsoft.bot.mobile.objects;
+package com.tsoft.bot.mobile.objects.USSD;
 
 public class MobileExcelObjects {
 

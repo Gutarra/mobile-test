@@ -1,6 +1,6 @@
 package steps;
 
-import com.tsoft.bot.mobile.objects.MobileExcelObjects;
+import com.tsoft.bot.mobile.objects.USSD.MobileExcelObjects;
 import com.tsoft.bot.mobile.scripts.USSD;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
@@ -33,7 +33,7 @@ public class USSDSteps extends USSD {
 
     @Y("vamos a la marcación")
     public void vamosALaMarcacion() throws IOException {
-        goToKeyboard();
+        // goToKeyboard();
     }
 
     @Y("consultamos mi prepado")

@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="web-automation-framework" />
+        <module name="mobile-test" />
         <module name="mobile-test-mobile-prototype" />
       </profile>
     </annotationProcessing>

@@ -4,7 +4,7 @@ import com.tsoft.bot.both.utility.ExcelReader;
 import com.tsoft.bot.both.utility.GenerateWord;
 import com.tsoft.bot.both.utility.ScreenShot;
 import com.tsoft.bot.mobile.helpers.HookMobile;
-import com.tsoft.bot.mobile.objects.MobileExcelObjects;
+import com.tsoft.bot.mobile.objects.USSD.MobileExcelObjects;
 import io.appium.java_client.AppiumDriver;
 import net.serenitybdd.core.Serenity;
 import org.openqa.selenium.By;
@@ -25,10 +25,10 @@ public class MobileBaseClass {
 
     protected void awaitElement(AppiumDriver driver, By locator) throws IOException {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 20);
+            WebDriverWait wait = new WebDriverWait(driver, 30);
             wait.until(ExpectedConditions.elementToBeClickable(locator ));
         }catch (RuntimeException we){
-            errorNoElementFound(driver);
+            errorNoElementFound(driver,locator);
             throw we;
         }
     }
@@ -36,7 +36,7 @@ public class MobileBaseClass {
         try {
             return driver.findElement(locator).isDisplayed();
         }catch (RuntimeException we){
-            errorNoElementFound(driver);
+            errorNoElementFound(driver,locator);
             throw we;
         }
     }
@@ -44,7 +44,7 @@ public class MobileBaseClass {
         try {
             driver.findElement(locator).click();
         }catch (RuntimeException we){
-            errorNoElementFound(driver);
+            errorNoElementFound(driver,locator);
             throw we;
         }
     }
@@ -52,7 +52,7 @@ public class MobileBaseClass {
         try {
             driver.findElement(locator).sendKeys(text);
         }catch (RuntimeException we){
-            errorNoElementFound(driver);
+            errorNoElementFound(driver,locator);
             throw we;
         }
     }
@@ -64,8 +64,10 @@ public class MobileBaseClass {
             throw we;
         }
     }
-    protected void errorNoElementFound(AppiumDriver driver) throws IOException {
-        driver.close();
+    protected void errorNoElementFound(AppiumDriver driver, By locator) throws IOException {
+        System.out.println("no element found, by locator" + locator.toString());
+        generateWord.addImageToWord(driver);
+        generateWord.sendText("element not found " + locator.toString());
     }
     public String get(String col){ return data.get(row).get(col); }
     public void setExcel(String ruta, String test) throws Exception {

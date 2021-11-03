@@ -2,10 +2,9 @@ package com.tsoft.bot.mobile.scripts;
 
 import com.tsoft.bot.mobile.base.MobileBaseClass;
 import com.tsoft.bot.mobile.helpers.HookMobile;
-import com.tsoft.bot.mobile.objects.MobileObjects;
+import com.tsoft.bot.mobile.objects.USSD.MobileObjects;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import org.openqa.selenium.By;
 
 import java.io.IOException;
 
@@ -16,6 +15,7 @@ public class USSD extends MobileBaseClass {
     public void goToKeyboard() throws IOException {
         try {
             driver = HookMobile.getDriver();
+            awaitElement(driver,MobileObjects.one);
             if (isDisplayed(driver,MobileObjects.one)){
                 click(driver,MobileObjects.keyboard);
                 message = "ingresando a la marcación";
@@ -32,6 +32,7 @@ public class USSD extends MobileBaseClass {
     }
     public void dialPhoneOrCodeUSSD(String ussd) throws IOException {
         try{
+            driver = HookMobile.getDriver();
             awaitElement(driver,MobileObjects.dialButton);
             message = "marcando el código ussd";
             int x = 0;
@@ -90,6 +91,7 @@ public class USSD extends MobileBaseClass {
             generateWord.sendText(message);
             generateWord.addImageToWord(driver);
             addImageReport(driver,message);
+            click(driver,MobileObjects.sendButton);
         } catch (Exception e) {
             e.printStackTrace();
             generateWord.sendText("[ERROR] " + message);

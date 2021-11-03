@@ -7,11 +7,12 @@ import org.testng.annotations.Test;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber"},
-        tags = "@USSD",
+        tags = "@MOVISTAR-APP",
         features = {
                 "src/test/resources/features/buyproducts",
                 "src/test/resources/features/service",
                 "src/test/resources/features/ussd",
+                "src/test/resources/features/MovistarApp",
                 "src/main/resources/features",
         },
         glue={
